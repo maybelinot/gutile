@@ -4,12 +4,12 @@
 # @Date:   2015-09-04 14:04:46
 # @Email:  etrott@redhat.com
 # @Last modified by:   etrott
-# @Last Modified time: 2015-10-08 15:31:12
+# @Last Modified time: 2015-10-08 16:10:30
 
 
 # python-2.7 setup.py build
 
-from __future__ import absolute_import, unicode_literals
+from __future__ import absolute_import#, unicode_literals
 
 from setuptools import setup
 
@@ -50,7 +50,7 @@ readme_pth = 'README.rst'
 with open(readme_pth) as _file:
     readme = _file.read()
 
-github = 'https://github.com/etrott/gutile'
+github = 'https://github.com/maybelinot/gutile'
 download_url = '%s/archive/master.zip' % github
 
 default_setup = dict(
