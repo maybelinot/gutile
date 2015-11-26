@@ -4,14 +4,14 @@
 # @Date:   2015-10-08 15:02:57
 # @Email:  etrott@redhat.com
 # @Last modified by:   etrott
-# @Last Modified time: 2015-10-08 15:15:48
+# @Last Modified time: 2015-11-26 14:33:17
 
 import httplib2
 
 from apiclient import discovery
 
 
-def get_file_id(credentials, gfile, write_access=False):
+def get_file_id(credentials, gfile, write_access=False, ftype='spreadsheet'):
     """DOCS..."""
     # auth for apiclient
     http = credentials.authorize(httplib2.Http())
@@ -23,7 +23,7 @@ def get_file_id(credentials, gfile, write_access=False):
     pathway = gfile.split('/')
 
     if write_access:
-        f_types = ['folder'] * (len(pathway) - 1) + ['spreadsheet']
+        f_types = ['folder'] * (len(pathway) - 1) + [ftype]
         f_types = ['application/vnd.google-apps.' + f for f in f_types]
 
     # folder/folder/folder/spreadsheet
